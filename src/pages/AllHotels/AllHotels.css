@@ -1,0 +1,14 @@
+.card-img-top{
+    min-height: 20rem;
+    object-fit: cover;
+}
+.card{
+    box-shadow: 0 0 0.5rem 0.25rem rgba(203, 94, 10, 0.2);
+}
+.search-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    
+}

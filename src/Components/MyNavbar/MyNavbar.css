@@ -1,0 +1,14 @@
+.nav-link{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #a98989;
+    text-transform: uppercase;
+    margin-right: 2rem;
+}
+.navbar-brand{
+    font-size: 2rem;
+    font-weight: 800;
+    color: wheat;
+    text-transform: uppercase;
+    margin-right: 2rem;
+}
