@@ -3,6 +3,7 @@ import { Container, Image, Form, Button, Row, Col } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import './SingleHotelPage.css';
 import HotelServiceCard from '../../../Components/HotelServiceCard/HotelServiceCard';
+import BookingComponent from '../../../Components/BookingComponent/BookingComponent';
 const SingleHotelPage = ({ data }) => {
     const { hotelId } = useParams();
     const [bookingDetails, setBookingDetails] = useState({
@@ -83,7 +84,10 @@ const SingleHotelPage = ({ data }) => {
                         <p>{hotel.details.welcomeMessage}</p>
 
                     </div>
-
+                    <div className="hotel-location">
+                        <h2>Location</h2>
+                        <p>{hotel.location}</p>
+                    </div>
                     <div className="hotel-details-container">
                         <h2>Services</h2>
                         <div className="service-cards">
@@ -96,66 +100,7 @@ const SingleHotelPage = ({ data }) => {
                             </Row>
                         </div>
                     </div>
-                    <div className="booking-form">
-                        <h2>Book Your Stay</h2>
-                        <Form onSubmit={handleBookingSubmit}>
-                            <Form.Group controlId="roomType">
-                                <Form.Label>Room Type</Form.Label>
-                                <Form.Control
-                                    as="select"
-                                    name="roomType"
-                                    onChange={handleInputChange}
-                                    value={bookingDetails.roomType}
-                                    required
-                                >
-                                    <option value="">Select Room Type</option>
-                                    {hotel.details.accommodation.map((room, index) => (
-                                        <option key={index} value={room.roomType}>
-                                            {room.roomType}
-                                        </option>
-                                    ))}
-                                </Form.Control>
-                            </Form.Group>
-                            <Form.Group controlId="checkInDate">
-                                <Form.Label>Check-in Date</Form.Label>
-                                <Form.Control
-                                    type="date"
-                                    name="checkInDate"
-                                    onChange={handleInputChange}
-                                    value={bookingDetails.checkInDate}
-                                    required
-                                />
-                            </Form.Group>
-                            <Form.Group controlId="checkOutDate">
-                                <Form.Label>Check-out Date</Form.Label>
-                                <Form.Control
-                                    type="date"
-                                    name="checkOutDate"
-                                    onChange={handleInputChange}
-                                    value={bookingDetails.checkOutDate}
-                                    required
-                                />
-                            </Form.Group>
-                            <Form.Group controlId="guests">
-                                <Form.Label>Number of Guests</Form.Label>
-                                <Form.Control
-                                    type="number"
-                                    name="guests"
-                                    onChange={handleInputChange}
-                                    value={bookingDetails.guests}
-                                    min="1"
-                                    required
-                                />
-                            </Form.Group>
-                            <div className="calculated-cost">
-                                <h3>Calculated Cost</h3>
-                                <p>{calculateCost()} TAKA</p>
-                            </div>
-                            <Button variant="primary" type="submit">
-                                Book Now
-                            </Button>
-                        </Form>
-                    </div>
+                    <BookingComponent hotelId={hotelId} />
                 </div>
             </Container>
         </div>
