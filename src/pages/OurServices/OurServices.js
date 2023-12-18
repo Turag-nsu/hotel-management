@@ -1,27 +1,31 @@
 import React from 'react';
 import ServiceCard from '../../Components/ServiceCard/ServiceCard';
 import { Col, Container, Row } from 'react-bootstrap';
-
+import service1 from '../../Images/Hotels/service-1.jpg'
+import service2 from '../../Images/Hotels/service-2.jpg'
+import service3 from '../../Images/Hotels/service-3.jpg'
+import service4 from '../../Images/Hotels/service-4.jpg'
+import service5 from '../../Images/Hotels/service-5.jpg'
 const services = [
     {
         "title": "Transportations",
-        "img": "transportations.jpg"
+        "img": service1
     },
     {
         "title": "Guide",
-        "img": "guide.jpg"
+        "img": service2
     },
     {
         "title": "Discounts",
-        "img": "discounts.jpg"
+        "img": service3
     },
     {
         "title": "Cashbacks",
-        "img": "cashbacks.jpg"
+        "img": service4
     },
     {
         "title": "Online Support",
-        "img": "online-support.jpg"
+        "img": service5
     }
 ]
 
